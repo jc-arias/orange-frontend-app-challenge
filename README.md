@@ -9,6 +9,7 @@ Application that lists graphics cards and allows a detail view.
   - Install dependencices (npm install)
   - Generate a build (npm run build)
 - On 'Server' folder
+  - Install dependencices (npm install)
   - Deploy the image (docker-compose up)
 - App will be served on http://localhost:5080
 - For more details, refer to 'Client' and 'Server' readme
