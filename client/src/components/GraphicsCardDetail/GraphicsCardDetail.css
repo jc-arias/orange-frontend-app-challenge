@@ -1,0 +1,78 @@
+.graphic-card-detail {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.graphic-card-detail .inner {
+    width: 75%;
+    height: 75%;
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border: 5px solid black;
+}
+
+.graphic-card-detail .image {
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    left: 25%;
+    position: fixed;
+    top: 7%;
+}
+
+.specs {
+    position: fixed;
+    top: 65%;
+    left: 28%;
+    text-align: center;
+}
+
+.specs .model {
+    font-weight: bold;
+    font-size: 5em;
+}
+
+.specs .format {
+    font-size: 2em;
+}
+
+.specs .format .name {
+    font-weight: bold;
+}
+
+.close {
+    font-weight: bold;
+    font-size: 2.5em;
+    cursor: pointer;
+    float: right;
+    margin-right: 2%;
+    margin-top: 1%;
+}
+
+@media (max-width: 1500px) {
+    .specs {
+        left: 20%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .specs {
+        left: 15%;
+    }
+    .specs .model {
+        font-weight: bold;
+        font-size: 3em;
+    }
+    
+    .specs .format {
+        font-size: 2em;
+    }
+}

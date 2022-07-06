@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  nginx:
+      image: nginx:latest
+      volumes:
+        - ./../client/build:/usr/share/nginx/html/
+        - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      ports:
+        - "5080:80"
+      links:
+        - express
+  express:
+    build: ./
+    volumes:
+      - "./node_modules:/usr/src/app/node_modules"
+    ports:
+      - "3001:3001"

@@ -1,0 +1,40 @@
+.search-bar {
+    position: absolute;
+    left: 50%;
+    width: 35%;
+    height: 50px;
+    background-color: #b1a296;
+    border: 3px solid #557A95;
+    color: white;
+    font-size: 25px;
+}
+
+::placeholder {
+    color: #557A95;
+}
+
+.center-horizontal {
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 1700px) {
+    .center-horizontal {
+        top: 4%;
+    }
+}
+
+@media (max-width: 1500px) {
+    .center-horizontal {
+        top: 3%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .center-horizontal {
+        top: 2%;
+    }
+}
