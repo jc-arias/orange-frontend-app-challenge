@@ -8,7 +8,10 @@ const graphics = (function () {
     const router = express.Router()
 
     router.get('/', (req, res) => {
-        res.json(data.gpu)
+        const page = parseInt(req.query.page) || 0
+        const limit = parseInt(req.query.limit) || 20
+        if (page * limit >= data.gpu) return []
+        res.json(data.gpu.slice(page * limit, page * limit + limit - 1))
     })
 
     router.get('/:filter', (req, res) => {

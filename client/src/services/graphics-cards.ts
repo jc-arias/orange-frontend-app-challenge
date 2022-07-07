@@ -4,22 +4,24 @@ import { fromFetch } from 'rxjs/fetch'
 const PATHS = {
   HOST: 'http://localhost:3001/graphics',
   GET: '/graphics-cards/',
-  DETAIL: '/graphics-cards/detail/'
+  DETAIL: '/graphics-cards/detail/',
+  PAGE: 'page=',
+  LIMIT: 'limit=20'
 }
 
 class GraphicsCards {
-  get (filter: String) {
-    return fetch(PATHS.GET, filter)
+  get (filter: String, page: Number) {
+    return fetch(PATHS.GET, filter, page)
   }
 
   getExtendedInfo (id: String) {
-    return fetch(PATHS.DETAIL, id)
+    return fetch(PATHS.DETAIL, id, -1)
   }
 }
 
-function fetch (path: String, param: String) {
-  console.log(`${PATHS.HOST}${path}${param}`)
-  const subscription$ = fromFetch(`${PATHS.HOST}${path}${param}`).pipe(
+function fetch (path: String, param: String, page: Number) {
+  const url = (page > -1) ? `${PATHS.HOST}${path}${param}?${PATHS.PAGE}${page}${PATHS.LIMIT}` : `${PATHS.HOST}${path}${param}`
+  const subscription$ = fromFetch(url).pipe(
     switchMap((response: any) => {
       if (response.ok) {
         return response.json()
