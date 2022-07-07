@@ -69,7 +69,7 @@ const gpu = {
 }
 
 function getData() {
-    return mocker.mocker().schema('gpu', gpu, 100).buildSync()
+    return mocker.mocker().schema('gpu', gpu, 250).buildSync()
 }
 
 export default getData
