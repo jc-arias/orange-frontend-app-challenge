@@ -13,7 +13,7 @@ const GraphicsCardListContainer: FC<GraphicsCardListContainerProps> = () => {
   const [data, setData] = useState([])
   const [filter, setFilter] = useState('')
   const [spinner, setSpinner] = useState(false)
-  const [page, setPage] = useState(0)
+  const [page, setPage] = useState(1)
 
   const fetchData = (filter: String, reset: boolean) => {
     setSpinner(true)
